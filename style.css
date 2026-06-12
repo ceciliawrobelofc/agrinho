@@ -1,0 +1,376 @@
+/* Variáveis de Cores */
+:root {
+    --bg-gradient: linear-gradient(135deg, #1c0003 0%, #3a0005 50%, #54000c 100%);
+    --card-bg: rgba(255, 255, 255, 0.04);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --text-main: #ffffff;
+    --text-muted: #f4dcd6;
+    --accent-gold: #e5a93b;
+    --accent-gold-hover: #ffca61;
+    --highlight-color: #ff99a8;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+.light-theme {
+    --bg-gradient: linear-gradient(135deg, #f7ede2 0%, #e8cfcd 100%);
+    --card-bg: rgba(74, 0, 7, 0.04);
+    --card-border: rgba(74, 0, 7, 0.1);
+    --text-main: #2d0004;
+    --text-muted: #5c1e24;
+    --accent-gold: #4a0007;
+    --accent-gold-hover: #6b0010;
+    --highlight-color: #a82334;
+    --shadow-color: rgba(74, 0, 7, 0.15);
+}
+
+/* Reset e Estrutura Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-main);
+    transition: background 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 5%;
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--highlight-color);
+}
+
+/* Container de Conteúdo */
+.main-container {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    justify-content: center;
+}
+
+/* Cartões Reutilizáveis (Glassmorphism) */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    box-shadow: 0 15px 35px var(--shadow-color);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 45px var(--shadow-color);
+}
+
+/* Títulos Globais de Seção */
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+}
+
+/* Elementos do Card Principal */
+.main-card {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.brand-badge {
+    display: inline-block;
+    background-color: var(--accent-gold);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 3.2rem;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+}
+
+.highlight {
+    color: var(--highlight-color);
+    font-weight: 700;
+}
+
+/* Seção de Métricas */
+.metrics-section {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    text-align: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+}
+
+.metric-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent-gold);
+}
+
+.metric-label {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+/* Grid de Recursos (Pilares) */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.feature-card {
+    padding: 30px;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: var(--highlight-color);
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Depoimentos */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.testimonial-card {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--accent-gold);
+}
+
+/* Seção de Conformidade Global */
+.compliance-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: -15px auto 20px auto;
+    line-height: 1.5;
+}
+
+.compliance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.compliance-card {
+    padding: 35px 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.compliance-icon {
+    font-size: 2.5rem;
+    background: rgba(0, 0, 0, 0.15);
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--card-border);
+    color: var(--accent-gold);
+    transition: transform 0.3s ease;
+}
+
+.compliance-card:hover .compliance-icon {
+    transform: rotateY(180deg);
+}
+
+.compliance-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.compliance-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* FAQ */
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    padding: 5px 10px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    text-align: left;
+    padding: 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: inherit;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 20px;
+}
+
+.faq-answer p {
+    padding-bottom: 20px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Botões */
+.btn-primary, .btn-theme {
+    background-color: var(--accent-gold);
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover, .btn-theme:hover {
+    background-color: var(--accent-gold-hover);
+    transform: translateY(-2px);
+}
+
+.btn-theme {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Contador Animado */
+.counter-box {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    display: inline-block;
+}
+
+#counter {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--highlight-color);
+}
+
+.unit { font-size: 1.2rem; color: var(--text-muted); }
+.hidden { display: none; }
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.9rem;
+    background: rgba(0, 0, 0, 0.15);
+    opacity: 0.8;
+    margin-top: auto;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    h1 { font-size: 2.3rem; }
+    .main-card { padding: 40px 20px; }
+}
